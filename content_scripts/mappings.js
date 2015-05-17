@@ -963,7 +963,7 @@ Mappings.clearQueue = function() {
 };
 
 Mappings.shouldPrevent = function(key) {
-  if (key === '<Esc>' || key === '<C-[>' || Hints.active) {
+  if (key === '<Esc>' || key === '<C-[>' || key === '<C-c>' || Hints.active) {
     return true;
   }
   if (/^[0-9]$/.test(key) &&
@@ -983,7 +983,7 @@ Mappings.shouldPrevent = function(key) {
 
 Mappings.convertToAction = function(key) {
 
-  if (key === '<Esc>' || key === '<C-[>') {
+  if (key === '<Esc>' || key === '<C-[>' || key === '<C-c>') {
     this.handleEscapeKey();
     return false;
   }
